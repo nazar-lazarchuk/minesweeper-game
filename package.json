@@ -1,5 +1,6 @@
 {
-  "name": "minesweeper",
+  "name": "minesweeper-game",
+  "author": "git@github.com:nazar-lazarchuk",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
