@@ -41,18 +41,22 @@
   }
 }
 
+.flag i {
+  color: #f23607;
+}
+
 .soundBtn {
-    i {
-        display: none;
+  i {
+    display: none;
+  }
+  &.active {
+    i:nth-child(1) {
+      display: block;
     }
-    &.active {
-        i:nth-child(1) {
-            display: block;
-        }
+  }
+  &:not(.active) {
+    i:nth-child(2) {
+      display: block;
     }
-    &:not(.active) {
-        i:nth-child(2) {
-            display: block;
-        }
-    }
+  }
 }

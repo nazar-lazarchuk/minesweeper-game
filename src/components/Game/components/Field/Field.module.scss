@@ -1,0 +1,25 @@
+$first-field-color: #aad751;
+$last-field-color: #a2d149;
+$active-field-color: #bfe17d;
+
+.field {
+  border-collapse: collapse;
+
+  td {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  tr:nth-child(even) td:nth-child(even),
+  tr:nth-child(odd) td:nth-child(odd) {
+    background-color: $first-field-color;
+  }
+  tr:nth-child(even) td:nth-child(odd),
+  tr:nth-child(odd) td:nth-child(even) {
+    background-color: $last-field-color;
+  }
+  tr:hover td:hover {
+    background-color: $active-field-color;
+  }
+}

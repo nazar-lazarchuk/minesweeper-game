@@ -1,6 +1,8 @@
 import { FC, useState } from 'react';
-import { GameProps } from './Game.types';
 
+import { Field } from './components/Field';
+
+import { GameProps } from './Game.types';
 import styles from './Game.module.scss';
 
 export const Game: FC<GameProps> = ({ onClose }) => {
@@ -33,6 +35,7 @@ export const Game: FC<GameProps> = ({ onClose }) => {
           <i className="fas fa-times"></i>
         </button>
       </div>
+      <Field />
     </div>
   );
 };
