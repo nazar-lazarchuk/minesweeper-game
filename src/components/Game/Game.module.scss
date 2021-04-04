@@ -6,6 +6,9 @@
 
   background: var(--color-primary);
   color: var(--color-text-primary);
+  font-size: var(--default-font-size);
+  line-height: var(--default-line-height);
+  text-align: center;
 }
 
 .panelBtn {
@@ -15,11 +18,41 @@
   padding: 0;
   margin: 0;
 
-  color: var(--color-text-primary);
-  outline-color: var(--color-outline-primary);
-  font-size: var(--default-font-size);
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 
-  height: var(--default-line-height);
+  outline-color: var(--color-outline-primary);
   min-width: var(--default-line-height);
   text-align: center;
+}
+
+.closeBtn,
+.soundBtn,
+.clock {
+  margin-left: 0.5em;
+}
+
+.clock,
+.flag {
+  white-space: nowrap;
+  i {
+    margin-right: 0.2em;
+  }
+}
+
+.soundBtn {
+    i {
+        display: none;
+    }
+    &.active {
+        i:nth-child(1) {
+            display: block;
+        }
+    }
+    &:not(.active) {
+        i:nth-child(2) {
+            display: block;
+        }
+    }
 }
