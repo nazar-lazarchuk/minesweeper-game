@@ -7,10 +7,10 @@ export type GameColType = {
 
 export type GameContextType = {
   state: {
-    isGameStarted: boolean;
     isGameOver: boolean;
     field: GameColType[][];
   };
 
-  startGame(coordinates: { i: number; j: number }): void;
+  createGame(rows: number, cols: number): void;
+  push(coordinates: { i: number; j: number }): void;
 };

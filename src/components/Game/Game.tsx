@@ -1,12 +1,24 @@
-import { FC, useState } from 'react';
+import { FC, useLayoutEffect, useState } from 'react';
 
 import { Field } from './components/Field';
 
 import { GameProps } from './Game.types';
 import styles from './Game.module.scss';
+import { useGame } from '../../contexts/GameContext/GameContext';
+
+const FIELD_ROWS = 20;
+const FIELD_COLS = 15;
 
 export const Game: FC<GameProps> = ({ onClose }) => {
   const [isSoundEnabled, setSoundEnabled] = useState<boolean>(true);
+  const {
+    state: { field },
+    createGame,
+  } = useGame();
+
+  useLayoutEffect(() => {
+    createGame(FIELD_ROWS, FIELD_COLS);
+  }, [createGame]);
 
   return (
     <div>
@@ -36,38 +48,12 @@ export const Game: FC<GameProps> = ({ onClose }) => {
         </button>
       </div>
       <Field
-        rows={[
-          [
-            {
-              Component: () => <div></div>,
-              isOpen: false,
-            },
-            {
-              Component: () => <div></div>,
-              isOpen: false,
-            },
-          ],
-          [
-            {
-              Component: () => <div></div>,
-              isOpen: true,
-            },
-            {
-              Component: () => <div></div>,
-              isOpen: false,
-            },
-          ],
-          [
-            {
-              Component: () => <div></div>,
-              isOpen: true,
-            },
-            {
-              Component: () => <div></div>,
-              isOpen: false,
-            },
-          ],
-        ]}
+        rows={field.map((r) =>
+          r.map((c) => ({
+            Component: () => <div></div>,
+            isOpen: false,
+          }))
+        )}
       />
     </div>
   );
