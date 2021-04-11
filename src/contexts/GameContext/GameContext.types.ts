@@ -12,5 +12,5 @@ export type GameContextType = {
   };
 
   createGame(rows: number, cols: number): void;
-  push(coordinates: { i: number; j: number }): void;
+  push(i: number, j: number ): void;
 };

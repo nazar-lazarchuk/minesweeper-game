@@ -8,25 +8,23 @@ const getStyleType = (i: number, j: number): FieldStyleType => {
   return FieldStyleType.odd;
 };
 
-export const Field: FC<FieldProps> = ({ rows }) => {
-  return (
-    <table className={styles.field}>
-      <tbody>
-        {rows.map((row, i) => (
-          <tr key={`row-${i}`}>
-            {row.map(({ Component }, j) => (
-              <td key={`row-${i} col-${j}`}>
-                <Component
-                  styleType={getStyleType(i, j)}
-                  open={() => {}}
-                  isOpened={false}
-                  isBomb={false}
-                />
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+export const Field: FC<FieldProps> = ({ rows, push }) => (
+  <table className={styles.field}>
+    <tbody>
+      {rows.map((row, i) => (
+        <tr key={`row-${i}`}>
+          {row.map(({ Component, gameColData }, j) => (
+            <td key={`row-${i} col-${j}`}>
+              <Component
+                styleType={getStyleType(i, j)}
+                open={() => push(i, j)}
+                isOpened={gameColData.opened}
+                isBomb={gameColData.bombExists}
+              />
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);

@@ -9,9 +9,9 @@ $last-field-opened-color: #d7b899;
     height: 100%;
 }
 
-.opened.type1 {
+.opened {
     background: $first-field-opened-color;
-}
-.opened.type2 {
-    background: $last-field-opened-color;
+    &.type2 {
+        background: $last-field-opened-color;
+    }
 }

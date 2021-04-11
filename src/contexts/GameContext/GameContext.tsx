@@ -38,7 +38,11 @@ export const GameProvider: FC = ({ children }) => {
     []
   );
 
-  const push = () => {};
+  const push: GameContextType['push'] = (i, j) => {
+    const f = JSON.parse(JSON.stringify(field));
+    f[i][j].opened = true;
+    setField(f);
+  };
 
   return (
     <Provider value={{ state: { isGameOver, field }, createGame, push }}>

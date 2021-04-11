@@ -21,4 +21,5 @@ type Row = Col[];
 
 export type FieldProps = {
   rows: Row[];
+  push(i: number, j: number): void;
 };

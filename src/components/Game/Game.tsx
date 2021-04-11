@@ -17,6 +17,7 @@ export const Game: FC<GameProps> = ({ onClose }) => {
   const {
     state: { field },
     createGame,
+    push,
   } = useGame();
 
   useLayoutEffect(() => {
@@ -61,6 +62,7 @@ export const Game: FC<GameProps> = ({ onClose }) => {
             return gameCol;
           })
         )}
+        push={push}
       />
     </div>
   );
