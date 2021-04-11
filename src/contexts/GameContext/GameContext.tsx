@@ -24,8 +24,6 @@ export const GameProvider: FC = ({ children }) => {
         new Array(cols).fill(null).map((c, j) =>
           new Array(rows).fill(null).map<GameColType>((r, i) => {
             const gameCol: GameColType = {
-              i,
-              j,
               bombExists: false,
               opened: false,
             };

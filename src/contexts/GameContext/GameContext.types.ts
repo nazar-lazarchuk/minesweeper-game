@@ -1,6 +1,4 @@
 export type GameColType = {
-  i: number;
-  j: number;
   bombExists: boolean;
   opened: boolean;
 };
