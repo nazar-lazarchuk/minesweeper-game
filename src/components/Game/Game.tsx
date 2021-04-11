@@ -35,7 +35,40 @@ export const Game: FC<GameProps> = ({ onClose }) => {
           <i className="fas fa-times"></i>
         </button>
       </div>
-      <Field />
+      <Field
+        rows={[
+          [
+            {
+              Component: () => <div></div>,
+              isOpen: false,
+            },
+            {
+              Component: () => <div></div>,
+              isOpen: false,
+            },
+          ],
+          [
+            {
+              Component: () => <div></div>,
+              isOpen: true,
+            },
+            {
+              Component: () => <div></div>,
+              isOpen: false,
+            },
+          ],
+          [
+            {
+              Component: () => <div></div>,
+              isOpen: true,
+            },
+            {
+              Component: () => <div></div>,
+              isOpen: false,
+            },
+          ],
+        ]}
+      />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import { Button } from './components/Button';
 import { Modal } from './components/Modal';
 import { Game } from './components/Game';
+import { GameProvider } from './contexts/GameContext/GameContext';
 
 import styles from './App.module.scss';
 
@@ -16,7 +17,9 @@ const App: FC = () => {
 
       {isGameEnabled && (
         <Modal>
-          <Game onClose={() => setGameEnabling(false)} />
+          <GameProvider>
+            <Game onClose={() => setGameEnabling(false)} />
+          </GameProvider>
         </Modal>
       )}
     </div>
