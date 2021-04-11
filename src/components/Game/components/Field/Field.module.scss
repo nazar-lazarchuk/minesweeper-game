@@ -1,8 +1,6 @@
 $first-field-color: #aad751;
 $last-field-color: #a2d149;
 $active-field-color: #bfe17d;
-$first-field-opened-color: #e5c29f;
-$last-field-opened-color: #d7b899;
 
 .field {
   border-collapse: collapse;
@@ -29,13 +27,5 @@ $last-field-opened-color: #d7b899;
   }
   tr:hover td:hover {
     background-color: $active-field-color;
-  }
-  tr:nth-child(even) td.opened:nth-child(even),
-  tr:nth-child(odd) td.opened:nth-child(odd) {
-    background-color: $first-field-opened-color;
-  }
-  tr:nth-child(even) td.opened:nth-child(odd),
-  tr:nth-child(odd) td.opened:nth-child(even) {
-    background-color: $last-field-opened-color;
   }
 }

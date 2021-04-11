@@ -1,0 +1,17 @@
+$first-field-opened-color: #e5c29f;
+$last-field-opened-color: #d7b899;
+
+.col {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.opened.type1 {
+    background: $first-field-opened-color;
+}
+.opened.type2 {
+    background: $last-field-opened-color;
+}

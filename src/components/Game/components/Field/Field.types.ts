@@ -1,14 +1,22 @@
 import { FC } from 'react';
+import { GameColType } from '../../../../contexts/GameContext/GameContext.types';
+
+export enum FieldStyleType {
+  even,
+  odd,
+}
 
 export type ColProps = {
-  i: number;
-  j: number;
+  styleType: FieldStyleType,
+  open(): void;
+  isOpened: boolean;
+  isBomb: boolean;
 };
 
-type Col = {
-    Component: FC<ColProps>;
-    isOpen: boolean;
-}
+export type Col = {
+  gameColData: GameColType;
+  Component: FC<ColProps>;
+};
 type Row = Col[];
 
 export type FieldProps = {

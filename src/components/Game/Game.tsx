@@ -1,10 +1,13 @@
 import { FC, useLayoutEffect, useState } from 'react';
 
-import { Field } from './components/Field';
+import { Field, Col as FieldComponentCol } from './components/Field';
 
 import { GameProps } from './Game.types';
-import styles from './Game.module.scss';
 import { useGame } from '../../contexts/GameContext/GameContext';
+
+import { FieldCol } from './components/FieldCol';
+
+import styles from './Game.module.scss';
 
 const FIELD_ROWS = 20;
 const FIELD_COLS = 15;
@@ -49,10 +52,14 @@ export const Game: FC<GameProps> = ({ onClose }) => {
       </div>
       <Field
         rows={field.map((r) =>
-          r.map((c) => ({
-            Component: () => <div></div>,
-            isOpen: false,
-          }))
+          r.map((c) => {
+            const gameCol: FieldComponentCol = {
+              gameColData: c,
+              Component: FieldCol,
+            };
+
+            return gameCol;
+          })
         )}
       />
     </div>
